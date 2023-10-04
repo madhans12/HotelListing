@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import Hotel from "./Hotel";
+import HotelNav from "./HotelNav";
+import Hotel1 from "./Hotel1";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <div className="header">
+        <h1>Featured List Property</h1>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Real estate can be brought, sold, leased or rented and can be a <br />
+          valuable investment opportunity.the value of real estate can be ...
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      </div>
+      <div className="nav1">
+        <HotelNav />
+      </div>
+      <Routes>
+        <Route path="/" element={<Hotel />}></Route>
+        <Route path="/london" element={<Hotel1 />}></Route>
+        <Route path="/newyork" element={<Hotel />}></Route>
+        <Route path="/chicago" element={<Hotel1 />}></Route>
+        <Route path="/texas" element={<Hotel />}></Route>
+      </Routes>
     </div>
   );
 }
